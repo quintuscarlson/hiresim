@@ -78,6 +78,28 @@ npm run dev
 Open:  
 http://localhost:5173
 
+## Deployment
+Frontend is deployed on Vercel and backend on Railway.  
+Ensure the following:  
+- Frontend API base URL points to the deployed backend
+- Backend CORS includes the frontend domain(s)
+- Environment variables are configured in both environments
+- WebSocket URLs use wss:// in production
 
+## Known Issues
+- Microphone permissions may require manual approval in some browsers
+- Safari may behave inconsistently with audio input
+- CORS misconfiguration can block frontend-backend communication
+- WebSocket connections require secure endpoints in production
 
+## Future Work
+- AI avatar / animated interviewer
+- Improved scoring and feedback models
+- Behavioral and system design interview modes
+- User accounts and session history
+- Improved speech-to-text accuracy
+
+## Author
+Quintus (Quin) Carlson
+https://quintuscarlson.com
 

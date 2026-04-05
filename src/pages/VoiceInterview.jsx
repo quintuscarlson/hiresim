@@ -23,7 +23,6 @@ export default function VoiceInterview() {
   const speakFallbackRef = useRef(null);
   const answerRef = useRef("");
   const transcriptEndRef = useRef(null);
-  const transcriptListRef = useRef(null);
   const loadingRef = useRef(false);
   const mountedRef = useRef(true);
   const lastSpokenQuestionRef = useRef("");
@@ -319,8 +318,7 @@ export default function VoiceInterview() {
   }, [question, micGranted, recognitionSupported, data]);
 
   useEffect(() => {
-    if (!transcriptListRef.current) return;
-    transcriptListRef.current.scrollTop = transcriptListRef.current.scrollHeight;
+    transcriptEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [transcript, answer]);
 
   if (!data) {
@@ -396,7 +394,7 @@ export default function VoiceInterview() {
 
         <div style={styles.transcriptBox}>
           <h2 style={styles.transcriptTitle}>Call Transcript</h2>
-          <div ref={transcriptListRef} style={styles.transcriptList}>
+         <div style={styles.transcriptList}>
             {transcript.map((line, index) => (
               <div
                 key={index}
@@ -425,6 +423,7 @@ export default function VoiceInterview() {
                 </div>
               </div>
             )}
+            <div ref={transcriptEndRef} />
           </div>
         </div>
       </div>
@@ -605,8 +604,7 @@ const styles = {
     padding: "20px",
     background: "rgba(2, 6, 23, 0.72)",
     height: "420px",
-    display: "flex",
-    flexDirection: "column",
+    overflowY: "auto",
   },
 
   transcriptTitle: {
@@ -617,9 +615,6 @@ const styles = {
   },
 
   transcriptList: {
-    flex: 1,
-    minHeight: 0,
-    overflowY: "auto",
     display: "grid",
     gap: "12px",
   },

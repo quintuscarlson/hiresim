@@ -5,8 +5,6 @@ HireSim is an AI-powered mock interview platform that simulates realistic techni
 Live Demo: https://hiresim.xyz  
 GitHub: https://github.com/quintuscarlson/hiresim  
 
----
-
 ## Features
 
 - Voice interview mode with real-time transcription
@@ -15,8 +13,6 @@ GitHub: https://github.com/quintuscarlson/hiresim
 - AI-generated interview questions
 - Automated scoring and debrief with feedback
 - Live transcript system with auto-updating UI
-
----
 
 ## Tech Stack
 
@@ -37,8 +33,6 @@ Deployment:
 - Vercel (frontend)
 - Railway (backend)
 
----
-
 ## How It Works
 
 1. User selects an interview type (voice, video, or typed)
@@ -49,12 +43,42 @@ Deployment:
 6. After completion, the system evaluates performance
 7. A debrief is generated with a score and explanation
 
----
-
 ## Getting Started
 
 ### Clone the repository
 
-```bash
+```
+bash
 git clone https://github.com/quintuscarlson/hiresim.git
 cd hiresim
+```
+
+### Backend Setup
+```
+cd backend
+npm install
+```
+Create a `.env` file
+```
+GROQ_API_KEY=your_key_here
+PORT=3000
+```
+Run the Backend:
+```
+node server.cjs
+```
+
+### Frontend Setup
+```
+cd frontend
+npm install
+npm run dev
+```
+
+### Run Locally
+Open:  
+http://localhost:5173
+
+
+
+

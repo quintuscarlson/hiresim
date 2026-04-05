@@ -318,7 +318,8 @@ export default function VoiceInterview() {
   }, [question, micGranted, recognitionSupported, data]);
 
   useEffect(() => {
-    transcriptEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (!transcriptListRef.current) return;
+    transcriptListRef.current.scrollTop = transcriptListRef.current.scrollHeight;
   }, [transcript, answer]);
 
   if (!data) {
@@ -394,7 +395,7 @@ export default function VoiceInterview() {
 
         <div style={styles.transcriptBox}>
           <h2 style={styles.transcriptTitle}>Call Transcript</h2>
-          <div style={styles.transcriptList}>
+          <div ref={transcriptListRef} style={styles.transcriptList}>
             {transcript.map((line, index) => (
               <div
                 key={index}
@@ -604,8 +605,9 @@ const styles = {
     borderRadius: "20px",
     padding: "20px",
     background: "rgba(2, 6, 23, 0.72)",
-    maxHeight: "420px",
-    overflowY: "auto",
+    height: "420px",
+    display: "flex",
+    flexDirection: "column",
   },
 
   transcriptTitle: {
@@ -616,6 +618,9 @@ const styles = {
   },
 
   transcriptList: {
+    flex: 1,
+    minHeight: 0,
+    overflowY: "auto",
     display: "grid",
     gap: "12px",
   },

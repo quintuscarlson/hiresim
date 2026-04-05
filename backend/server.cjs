@@ -12,7 +12,7 @@ app.use(
     origin: [
       "https://hiresim.xyz",
       "https://www.hiresim.xyz",
-      "https://hiresim-pj3qvso9k-quintuscarlsons-projects.vercel.app",
+      "https://hiresim-beta.vercel.app",
     ],
   })
 );

@@ -7,7 +7,15 @@ const crypto = require("crypto");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://hiresim.xyz",
+      "https://www.hiresim.xyz",
+      "https://hiresim-pj3qvso9k-quintuscarlsons-projects.vercel.app",
+    ],
+  })
+);
 app.use(express.json());
 
 const sessions = new Map();

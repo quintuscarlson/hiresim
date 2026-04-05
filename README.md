@@ -100,6 +100,6 @@ Ensure the following:
 - Improved speech-to-text accuracy
 
 ## Author
-Quintus (Quin) Carlson
+Quintus (Quin) Carlson  
 https://quintuscarlson.com
 

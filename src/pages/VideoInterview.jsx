@@ -829,7 +829,7 @@ export default function VideoInterview() {
 const styles = {
   page: {
     position: "relative",
-    minHeight: "100vh",
+    height: "100vh",
     background:
       "radial-gradient(circle at top, rgba(34,211,238,0.08), transparent 28%), linear-gradient(180deg, #06111f 0%, #0b1220 38%, #0f172a 100%)",
     color: "#f8fafc",

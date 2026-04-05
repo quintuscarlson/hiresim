@@ -1,16 +1,60 @@
-# React + Vite
+# HireSim
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HireSim is an AI-powered mock interview platform that simulates realistic technical interviews through voice, video, and typed interactions. The system provides real-time conversation, live transcription, and automated post-interview feedback.
 
-Currently, two official plugins are available:
+Live Demo: https://hiresim.xyz  
+GitHub: https://github.com/quintuscarlson/hiresim  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Voice interview mode with real-time transcription
+- Video interview mode with camera integration and dynamic UI
+- Typed interview mode for structured responses
+- AI-generated interview questions
+- Automated scoring and debrief with feedback
+- Live transcript system with auto-updating UI
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+Frontend:
+- React (Vite)
+- Tailwind CSS
+- WebSockets
+
+Backend:
+- Node.js
+- Express
+- WebSockets
+
+AI:
+- Groq LLM (response generation and scoring)
+
+Deployment:
+- Vercel (frontend)
+- Railway (backend)
+
+---
+
+## How It Works
+
+1. User selects an interview type (voice, video, or typed)
+2. A session is created via the backend API
+3. The AI interviewer generates and asks questions dynamically
+4. User responses are captured (voice, video, or text)
+5. Responses are processed and added to a live transcript
+6. After completion, the system evaluates performance
+7. A debrief is generated with a score and explanation
+
+---
+
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/quintuscarlson/hiresim.git
+cd hiresim

@@ -23,6 +23,7 @@ export default function VoiceInterview() {
   const speakFallbackRef = useRef(null);
   const answerRef = useRef("");
   const transcriptEndRef = useRef(null);
+  const transcriptListRef = useRef(null);
   const loadingRef = useRef(false);
   const mountedRef = useRef(true);
   const lastSpokenQuestionRef = useRef("");
@@ -424,8 +425,6 @@ export default function VoiceInterview() {
                 </div>
               </div>
             )}
-
-            <div ref={transcriptEndRef} />
           </div>
         </div>
       </div>

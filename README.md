@@ -47,7 +47,6 @@ Deployment:
 ### Clone the repository
 
 ```
-bash
 git clone https://github.com/quintuscarlson/hiresim.git
 cd hiresim
 ```

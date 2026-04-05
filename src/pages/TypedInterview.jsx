@@ -85,7 +85,12 @@ export default function TypedInterview() {
           <div style={styles.metaBox}>
             <p><strong>Role:</strong> {setup.role}</p>
             <p><strong>Type:</strong> {setup.type}</p>
-            <p><strong>Length:</strong> {setup.length}</p>
+           <p>
+              <strong>Length:</strong>{" "}
+              {setup.length
+                ? setup.length.charAt(0).toUpperCase() + setup.length.slice(1)
+                : "Standard"}
+            </p>
           </div>
         </div>
 

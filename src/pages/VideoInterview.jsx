@@ -25,6 +25,7 @@ export default function VideoInterview() {
   const silenceTimerRef = useRef(null);
   const speakFallbackRef = useRef(null);
   const transcriptEndRef = useRef(null);
+  const transcriptListRef = useRef(null);
   const answerRef = useRef("");
   const lastSpokenQuestionRef = useRef("");
   const loadingRef = useRef(false);
@@ -571,10 +572,8 @@ export default function VideoInterview() {
   }, [micEnabled, aiSpeaking, loading, micGranted, recognitionSupported]);
 
   useEffect(() => {
-    transcriptEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
+    if (!transcriptListRef.current) return;
+    transcriptListRef.current.scrollTop = transcriptListRef.current.scrollHeight;
   }, [transcript, answer]);
 
   if (!data) {
@@ -592,7 +591,11 @@ export default function VideoInterview() {
           <h1 style={styles.meetingTitle}>{normalizedSetup.role}</h1>
           <div style={styles.metaRow}>
             <span style={styles.metaPill}>{normalizedSetup.type}</span>
-            <span style={styles.metaPill}>{normalizedSetup.length}</span>
+            <span style={styles.metaPill}>
+              {normalizedSetup.length
+                ? normalizedSetup.length.charAt(0).toUpperCase() + normalizedSetup.length.slice(1)
+                : "Standard"}
+            </span>
           </div>
         </div>
 
@@ -728,7 +731,7 @@ export default function VideoInterview() {
               </div>
             </div>
 
-            <div style={styles.transcriptList}>
+           <div ref={transcriptListRef} style={styles.transcriptList}>
               {transcript.map((line, index) => (
                 <div
                   key={index}

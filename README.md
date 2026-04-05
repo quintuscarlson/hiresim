@@ -3,7 +3,6 @@
 HireSim is an AI-powered mock interview platform that simulates realistic technical interviews through voice, video, and typed interactions. The system provides real-time conversation, live transcription, and automated post-interview feedback.
 
 Live Demo: https://hiresim.xyz  
-GitHub: https://github.com/quintuscarlson/hiresim  
 
 ## Features
 
